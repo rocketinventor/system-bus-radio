@@ -21,3 +21,9 @@ function start() { // Start Web Worker & send song data to player
 function end() { // Stops the Web Worker
 	player.terminate();
 }
+
+function pause(time) {
+	window.logs.value += "\nPaused / " + time*.001 + " seconds";
+	var dt = new Date();
+	while ((new Date()) - dt <= time) { /* Do nothing */ }
+}
